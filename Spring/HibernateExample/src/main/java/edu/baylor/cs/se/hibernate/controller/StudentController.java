@@ -1,6 +1,6 @@
 package edu.baylor.cs.se.hibernate.controller;
 
-import edu.baylor.cs.se.hibernate.model.Hero;
+//import edu.baylor.cs.se.hibernate.model.Hero;
 import edu.baylor.cs.se.hibernate.model.Student;
 import edu.baylor.cs.se.hibernate.services.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;

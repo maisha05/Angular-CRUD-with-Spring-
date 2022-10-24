@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { StudentService } from '../student.service';
 import { User } from '../user';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-student-delete',
@@ -14,7 +15,12 @@ export class StudentDeleteComponent implements OnInit {
   update:any;
 
 
-  constructor(private service:StudentService) { }
+  constructor(private service:StudentService,private router: Router) { }
+
+  back($myParam: string = ''): void {
+    const navigationDetails: string[] = ['/register'];
+    this.router.navigate(navigationDetails);
+  }
 
   public findByName(){
     let resp= this.service.getStudentByName(this.name);

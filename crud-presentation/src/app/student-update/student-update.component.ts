@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../user';
 import { StudentService } from '../student.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
@@ -21,13 +22,18 @@ export class StudentUpdateComponent implements OnInit {
   user:any;
   message:any;
 
-  constructor(private service:StudentService, private router: ActivatedRoute) { }
+  constructor(private service:StudentService, private router: ActivatedRoute, private router1: Router) { }
 
   ngOnInit(): void {
     console.warn(this.router.snapshot.params['studentId'])
     let resp = this.service.getById(this.router.snapshot.params['studentId']);
     resp.subscribe((data)=>this.user=data);
 
+  }
+
+  back($myParam: string = ''): void {
+    const navigationDetails: string[] = ['/search'];
+    this.router1.navigate(navigationDetails);
   }
 
   updateNow()

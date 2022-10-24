@@ -18,9 +18,6 @@ export class StudentAddComponent implements OnInit {
 
   search($myParam: string = ''): void {
     const navigationDetails: string[] = ['/search'];
-    // if($myParam.length) {
-    //   navigationDetails.push($myParam);
-    // }
     this.router.navigate(navigationDetails);
   }
 
